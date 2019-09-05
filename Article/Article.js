@@ -114,18 +114,18 @@ let articlesDiv = document.querySelector('.articles');
 
 //Iterate Through Data
 data.map(data => {
-  articlesDiv.appendChild(createArticle(data.title, data.date, data.firstP, data.secondP, data.thirdP));
+  articlesDiv.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
 })
 
-function createArticle(title, date, firstP, secondP, thirdP){
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph){
 //Create Elements
 //let container = document.createElement('div');
 let article = document.createElement('div');
 let titleHeading = document.createElement('h2');
 let articleDate = document.createElement('p');
-let firstParagraph = document.createElement('p');
-let secondParagraph = document.createElement('p');
-let thirdParagraph = document.createElement('p');
+let firstP = document.createElement('p');
+let secondP = document.createElement('p');
+let thirdP = document.createElement('p');
 let button = document.createElement('span');
 
 
@@ -137,9 +137,9 @@ button.classList.add('expandButton');
 //Add Text Content
 titleHeading.textContent = title;
 articleDate.textContent = date;
-firstParagraph.textContent = firstP;
-secondParagraph.textContent = secondP;
-thirdParagraph.textContent = thirdP;
+firstP.textContent = firstParagraph;
+secondP.textContent = secondParagraph;
+thirdP.textContent = thirdParagraph;
 button.textContent = 'Open';
 
 
@@ -148,9 +148,9 @@ button.textContent = 'Open';
 //Append Elements To Article
 article.appendChild(titleHeading);
 article.appendChild(articleDate);
-article.appendChild(firstParagraph);
-article.appendChild(secondParagraph);
-article.appendChild(thirdParagraph);
+article.appendChild(firstP);
+article.appendChild(secondP);
+article.appendChild(thirdP);
 article.appendChild(button);
 
 //Add Event Listener To Expand Span
