@@ -119,8 +119,14 @@ let secondParagraph = document.createElement('p');
 let thirdParagraph = document.createElement('p');
 let button = document.createElement('span');
 
+//Add Class Names
+article.classList.add('article');
+articleDate.classList.add('date');
+button.classList.add('expandButton');
+
 //Add Event Listener To Expand Span
 button.addEventListener('click', (event) => {
   button.classList.toggle('article-open');
 })
+return article;
 }
