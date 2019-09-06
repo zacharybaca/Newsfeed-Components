@@ -113,7 +113,7 @@ const data = [
 let articlesDiv = document.querySelector('.articles');
 
 //Iterate Through Data
-data.map(data => {
+data.forEach(data => {
   articlesDiv.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
 })
 
