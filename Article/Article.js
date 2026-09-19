@@ -99,9 +99,6 @@ const data = [
     <span class='expandButton'></span>
   </div>
 
-  Hint: You will need to use createElement more than once here!
-
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
@@ -112,3 +109,54 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+let articlesDiv = document.querySelector('.articles');
+
+//Iterate Through Data
+data.forEach(data => {
+  articlesDiv.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph));
+})
+
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph){
+//Create Elements
+//let container = document.createElement('div');
+let article = document.createElement('div');
+let titleHeading = document.createElement('h2');
+let articleDate = document.createElement('p');
+let firstP = document.createElement('p');
+let secondP = document.createElement('p');
+let thirdP = document.createElement('p');
+let button = document.createElement('span');
+
+
+//Add Class Names
+article.classList.add('article');
+articleDate.classList.add('date');
+button.classList.add('expandButton');
+
+//Add Text Content
+titleHeading.textContent = title;
+articleDate.textContent = date;
+firstP.textContent = firstParagraph;
+secondP.textContent = secondParagraph;
+thirdP.textContent = thirdParagraph;
+button.textContent = 'Open';
+
+
+
+
+//Append Elements To Article
+article.appendChild(titleHeading);
+article.appendChild(articleDate);
+article.appendChild(firstP);
+article.appendChild(secondP);
+article.appendChild(thirdP);
+article.appendChild(button);
+
+//Add Event Listener To Expand Span
+button.addEventListener('click', (event) => {
+  article.classList.toggle('article-open');
+})
+
+return article;
+}
